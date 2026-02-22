@@ -1,0 +1,31 @@
+services:
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: sudipta4docker/log-analysis:frontend
+    ports:
+      - "3000:80"
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: sudipta4docker/log-analysis:backend
+    ports:
+      - "5000:5000"
+
+  ai-agent:
+    build:
+      context: ./ai-agent
+      dockerfile: Dockerfile
+    image: sudipta4docker/log-analysis:ai-agent
+    ports:
+      - "6000:6000"
+
+  db:
+    image: mongo:6
+    volumes:
+      - ./log-analysis-data:/data/db
+
