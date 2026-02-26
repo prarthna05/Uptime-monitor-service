@@ -9,3 +9,5 @@ log-analysis-data/
 
 # Env files
 .env
+
+uptime-data/
