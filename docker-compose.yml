@@ -4,7 +4,7 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    image: sudipta4docker/log-analysis:frontend
+    image: prarthna005/website-uptime-monitoring:frontend
     ports:
       - "3000:80"
 
@@ -12,7 +12,7 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    image: sudipta4docker/log-analysis:backend
+    image: prarthna005/website-uptime-monitoring:backend
     ports:
       - "5000:5000"
 
@@ -20,14 +20,14 @@ services:
     build:
       context: ./ai-agent
       dockerfile: Dockerfile
-    image: sudipta4docker/log-analysis:ai-agent
+    image: prarthna005/website-uptime-monitoring:ai-agent
     ports:
       - "6000:6000"
 
   db:
     image: mongo:6
     volumes:
-      - ./log-analysis-data:/data/db
+      - ./website-uptime-monitoring:/data/db
   prometheus:
     image: prom/prometheus
     ports:
