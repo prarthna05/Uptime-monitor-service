@@ -1,7 +1,6 @@
 pipeline {
 agent any
 
-```
 environment {
     DOCKERHUB_REPO = "prarthna005/website-uptime-monitoring"
 }
@@ -50,6 +49,5 @@ post {
         echo 'Pipeline failed'
     }
 }
-```
 
 }
